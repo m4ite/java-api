@@ -16,15 +16,15 @@ public class UserService {
         return this.userRepository.save(userModel);
     }
 
-    public void save(String id, String name, short age) {
-        this.userRepository.save(new UserModel(id, name, age));
+    public void save(String id, String name, String email, short age, String proficience, String password) {
+        this.userRepository.save(new UserModel(id, name, email, age, proficience, password));
     }
     
     public List<UserModel> findAll() {
         return (List<UserModel>) this.userRepository.findAll();
     }
 
-    public List<UserModel> findByName(String name) {
-        return (List<UserModel>) this.userRepository.findByName(name);
+    public List<UserModel> findByEmail(String email) {
+        return (List<UserModel>) this.userRepository.findByEmail(email);
     }
 }
